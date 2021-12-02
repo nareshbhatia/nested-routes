@@ -1,3 +1,7 @@
 .min-h-14 {
   min-height: 3.5rem; /* 56px */
 }
+
+.flex-200px {
+  flex: 0 0 200px;
+}

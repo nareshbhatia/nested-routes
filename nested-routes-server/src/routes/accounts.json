@@ -1,0 +1,14 @@
+[
+  {
+    "id": "brokerage-account",
+    "name": "Brokerage Account"
+  },
+  {
+    "id": "retirement-account",
+    "name": "Retirement Account"
+  },
+  {
+    "id": "jennys-college-fund",
+    "name": "Jenny's College Fund"
+  }
+]
