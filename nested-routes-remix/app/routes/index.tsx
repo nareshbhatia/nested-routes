@@ -1,4 +1,10 @@
-import type { MetaFunction, LoaderFunction } from 'remix';
+import { Outlet } from 'remix';
+import type { MetaFunction } from 'remix';
+import {
+  Header,
+  HorizontalContainer,
+  ViewVerticalContainer,
+} from '../components';
 
 export let meta: MetaFunction = () => {
   return {
@@ -8,5 +14,12 @@ export let meta: MetaFunction = () => {
 };
 
 export default function HomePage() {
-  return <div>Hello World!</div>;
+  return (
+    <ViewVerticalContainer>
+      <Header />
+      <HorizontalContainer className="min-h-0">
+        <Outlet />
+      </HorizontalContainer>
+    </ViewVerticalContainer>
+  );
 }
