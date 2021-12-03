@@ -19,7 +19,7 @@ export const AccountsSideBar = ({ accounts }: AccountsSideBarProps) => {
               key={account.id}
               className="text-sm leading-5 text-gray-400 mb-4 cursor-pointer"
             >
-              <NavLink to={`${account.id}/orders`}>{account.name}</NavLink>
+              <NavLink to={`${account.id}/holdings`}>{account.name}</NavLink>
             </li>
           ))}
         </ul>

@@ -7,11 +7,6 @@ export const AccountHeader = () => {
     <nav className="flex items-center h-14 px-4 bg-neutral-50">
       <ul className="flex">
         <li>
-          <NavLink className={linkStyle} to="overview" end>
-            Overview
-          </NavLink>
-        </li>
-        <li>
           <NavLink className={linkStyle} to="holdings" end>
             Holdings
           </NavLink>
@@ -19,11 +14,6 @@ export const AccountHeader = () => {
         <li>
           <NavLink className={linkStyle} to="orders" end>
             Orders
-          </NavLink>
-        </li>
-        <li>
-          <NavLink className={linkStyle} to="activity" end>
-            Activity
           </NavLink>
         </li>
       </ul>
