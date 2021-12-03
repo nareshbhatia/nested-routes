@@ -5,3 +5,12 @@
 .flex-200px {
   flex: 0 0 200px;
 }
+
+.bg-gradient {
+  background-image: radial-gradient(
+    circle,
+    #ffffff 0%,
+    #dceefb 50%,
+    #b6e0fe 100%
+  );
+}

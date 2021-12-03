@@ -1,28 +1,7 @@
-import { json, Outlet, useLoaderData } from 'remix';
-import type { LoaderFunction, MetaFunction } from 'remix';
-import {
-  AccountsSideBar,
-  Header,
-  HorizontalContainer,
-  ViewVerticalContainer,
-} from '../components';
-import { Account } from '../models';
-import { API_URL } from '../utils';
-
-type HomePageData = {
-  accounts: Array<Account>;
-};
-
-export let loader: LoaderFunction = async () => {
-  const resAccounts = await fetch(`${API_URL}/accounts`);
-  const accounts = await resAccounts.json();
-
-  let data: HomePageData = {
-    accounts,
-  };
-
-  return json(data);
-};
+import { useNavigate } from 'remix';
+import type { MetaFunction } from 'remix';
+import { ViewCenteredContainer } from '~/components';
+import logo from '~/assets/bullsfirst-logo.svg';
 
 export let meta: MetaFunction = () => {
   return {
@@ -32,15 +11,22 @@ export let meta: MetaFunction = () => {
 };
 
 export default function HomePage() {
-  const { accounts } = useLoaderData<HomePageData>();
+  const navigate = useNavigate();
 
   return (
-    <ViewVerticalContainer>
-      <Header />
-      <HorizontalContainer className="min-h-0">
-        <AccountsSideBar accounts={accounts} />
-        <Outlet />
-      </HorizontalContainer>
-    </ViewVerticalContainer>
+    <ViewCenteredContainer className="bg-gradient">
+      <div className="flex flex-col items-center">
+        <img src={logo} alt="logo" width="200" />
+        <p className="mt-10 mb-10 text-3xl max-w-sm">
+          Get better results with Bullsfirst at the helm of your portfolio.
+        </p>
+        <button
+          className="px-6 py-3 rounded bg-primary-800 text-white font-medium"
+          onClick={() => navigate('/accounts')}
+        >
+          Show My Accounts
+        </button>
+      </div>
+    </ViewCenteredContainer>
   );
 }
