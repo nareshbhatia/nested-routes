@@ -27,7 +27,7 @@ export default function OrdersView() {
 
   return (
     <HorizontalContainer>
-      <table>
+      <table className="flex-1">
         <thead>
           <tr>
             <th className="text-left">Date</th>

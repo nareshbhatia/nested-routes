@@ -1,11 +1,15 @@
 import bodyParser from 'body-parser';
 import cors from 'cors';
 import express, { Request, Response, NextFunction } from 'express';
+import morgan from 'morgan';
 import { rootRouter } from './routes';
 
 export function createApp() {
   // Create Express App
   const app = express();
+
+  // Add middleware to log requests
+  app.use(morgan('combined'))
 
   // Add middleware to enable CORS
   app.use(cors());

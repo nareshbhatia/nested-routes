@@ -1279,6 +1279,13 @@
   resolved "https://registry.yarnpkg.com/@types/mime/-/mime-1.3.2.tgz#93e25bf9ee75fe0fd80b594bc4feb0e862111b5a"
   integrity sha512-YATxVxgRqNH6nHEIsvg6k2Boc1JHI9ZbH5iWFFv/MTkchz3b1ieGDa5T0a9RznNdI0KhVbdbWSN+KWWrQZRxTw==
 
+"@types/morgan@^1.9.3":
+  version "1.9.3"
+  resolved "https://registry.yarnpkg.com/@types/morgan/-/morgan-1.9.3.tgz#ae04180dff02c437312bc0cfb1e2960086b2f540"
+  integrity sha512-BiLcfVqGBZCyNCnCH3F4o2GmDLrpy0HeBVnNlyZG4fo88ZiE9SoiBe3C+2ezuwbjlEyT+PDZ17//TAlRxAn75Q==
+  dependencies:
+    "@types/node" "*"
+
 "@types/node@*", "@types/node@^16.11.11":
   version "16.11.11"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-16.11.11.tgz#6ea7342dfb379ea1210835bada87b3c512120234"
@@ -1547,6 +1554,13 @@ balanced-match@^1.0.0:
   resolved "https://registry.yarnpkg.com/balanced-match/-/balanced-match-1.0.2.tgz#e83e3a7e3f300b34cb9d87f615fa0cbf357690ee"
   integrity sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==
 
+basic-auth@~2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/basic-auth/-/basic-auth-2.0.1.tgz#b998279bf47ce38344b4f3cf916d4679bbf51e3a"
+  integrity sha512-NF+epuEdnUYVlGuhaxbbq+dvJttwLnGY+YixlXlME5KpQ5W3CnXA5cVTneY3SPbPDRkcjMbifrwmFYcClgOZeg==
+  dependencies:
+    safe-buffer "5.1.2"
+
 binary-extensions@^2.0.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/binary-extensions/-/binary-extensions-2.2.0.tgz#75f502eeaf9ffde42fc98829645be4ea76bd9e2d"
@@ -1667,9 +1681,9 @@ camelcase@^6.2.0:
   integrity sha512-tVI4q5jjFV5CavAU8DXfza/TJcZutVKo/5Foskmsqcm0MsL91moHvwiGNnqaa2o6PF/7yT5ikDRcVcl8Rj6LCA==
 
 caniuse-lite@^1.0.30001280:
-  version "1.0.30001283"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001283.tgz#8573685bdae4d733ef18f78d44ba0ca5fe9e896b"
-  integrity sha512-9RoKo841j1GQFSJz/nCXOj0sD7tHBtlowjYlrqIUS812x9/emfBLBt6IyMz1zIaYc/eRL8Cs6HPUVi2Hzq4sIg==
+  version "1.0.30001284"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001284.tgz#d3653929ded898cd0c1f09a56fd8ca6952df4fca"
+  integrity sha512-t28SKa7g6kiIQi6NHeOcKrOrGMzCRrXvlasPwWC26TH2QNdglgzQIRUuJ0cR3NeQPH+5jpuveeeSFDLm2zbkEw==
 
 chalk@^2.0.0:
   version "2.4.2"
@@ -1967,6 +1981,11 @@ depd@~1.1.2:
   resolved "https://registry.yarnpkg.com/depd/-/depd-1.1.2.tgz#9bcd52e14c097763e749b274c4346ed2e560b5a9"
   integrity sha1-m81S4UwJd2PnSbJ0xDRu0uVgtak=
 
+depd@~2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/depd/-/depd-2.0.0.tgz#b696163cc757560d09cf22cc8fad1571b79e76df"
+  integrity sha512-g7nH6P6dyDioJogAAGprGpCtVImJhpPk/roCzdb3fIh61/s/nPsfR6onyMwkCAR/OlC3yBC0lESvUoQEAssIrw==
+
 destroy@~1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/destroy/-/destroy-1.0.4.tgz#978857442c44749e4206613e37946205826abd80"
@@ -2012,9 +2031,9 @@ ee-first@1.1.1:
   integrity sha1-WQxhFWsK4vTwJVcyoViyZrxWsh0=
 
 electron-to-chromium@^1.3.896:
-  version "1.4.8"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.8.tgz#e1b7752ac1a75e39b5dd90cc7e29ea08b351c484"
-  integrity sha512-Cu5+dbg55+1E3ohlsa8HT0s4b8D0gBewXEGG8s5wBl8ynWv60VuvYW25GpsOeTVXpulhyU/U8JYZH+yxASSJBQ==
+  version "1.4.11"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.11.tgz#303c9deebbe90c68bf5c2c81a88a3bf4522c8810"
+  integrity sha512-2OhsaYgsWGhWjx2et8kaUcdktPbBGjKM2X0BReUCKcSCPttEY+hz2zie820JLbttU8jwL92+JJysWwkut3wZgA==
 
 emittery@^0.8.1:
   version "0.8.1"
@@ -3268,6 +3287,17 @@ minimist@^1.2.0, minimist@^1.2.5:
   resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.5.tgz#67d66014b66a6a8aaa0c083c5fd58df4e4e97602"
   integrity sha512-FM9nNUYrRBAELZQT3xeZQ7fmMOBg6nWNmJKTcgsJeaLstP/UODVpGsr5OhXhhXg6f+qtJ8uiZ+PUxkDWcgIXLw==
 
+morgan@^1.10.0:
+  version "1.10.0"
+  resolved "https://registry.yarnpkg.com/morgan/-/morgan-1.10.0.tgz#091778abc1fc47cd3509824653dae1faab6b17d7"
+  integrity sha512-AbegBVI4sh6El+1gNwvD5YIck7nSA36weD7xvIxG4in80j/UoK8AEGaWnnz8v1GxonMCltmlNs5ZKbGvl9b1XQ==
+  dependencies:
+    basic-auth "~2.0.1"
+    debug "2.6.9"
+    depd "~2.0.0"
+    on-finished "~2.3.0"
+    on-headers "~1.0.2"
+
 ms@2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.0.0.tgz#5608aeadfc00be6c2901df5f9861788de0d597c8"
@@ -3384,6 +3414,11 @@ on-finished@~2.3.0:
   integrity sha1-IPEzZIGwg811M3mSoWlxqi2QaUc=
   dependencies:
     ee-first "1.1.1"
+
+on-headers@~1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/on-headers/-/on-headers-1.0.2.tgz#772b0ae6aaa525c399e489adfad90c403eb3c28f"
+  integrity sha512-pZAE+FJLoyITytdqK0U5s+FIpjN0JP3OzFi/u8Rx+EV5/W+JTWGXG8xFzevE7AjBfDqHv/8vL8qQsIhHnqRkrA==
 
 once@^1.3.0, once@^1.3.1, once@^1.4.0:
   version "1.4.0"
