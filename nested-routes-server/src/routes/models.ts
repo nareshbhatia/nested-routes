@@ -1,3 +1,7 @@
+export interface Account {
+  id: string;
+  name: string;
+}
 export interface Security {
   id: string;
   name: string;
