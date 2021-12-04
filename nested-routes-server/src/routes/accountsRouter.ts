@@ -1,5 +1,5 @@
 import express from 'express';
-import accounts from './accounts.json';
+import accounts from './data/accounts.json';
 
 export const accountsRouter = express.Router();
 
