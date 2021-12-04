@@ -8,8 +8,8 @@ type OrderViewData = {
 };
 
 export const loader: LoaderFunction = async ({ params }) => {
-  const { id } = params;
-  const resOrder = await fetch(`${API_URL}/orders/${id}`);
+  const { orderId } = params;
+  const resOrder = await fetch(`${API_URL}/orders/${orderId}`);
   const order = await resOrder.json();
 
   const data: OrderViewData = {

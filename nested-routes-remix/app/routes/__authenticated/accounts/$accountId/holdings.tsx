@@ -8,8 +8,8 @@ type HoldingsViewData = {
 };
 
 export const loader: LoaderFunction = async ({ params }) => {
-  const { id } = params;
-  const resHoldings = await fetch(`${API_URL}/holdings?accountId=${id}`);
+  const { accountId } = params;
+  const resHoldings = await fetch(`${API_URL}/holdings?accountId=${accountId}`);
   const holdings = await resHoldings.json();
 
   const data: HoldingsViewData = {
