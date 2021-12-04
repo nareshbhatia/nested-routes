@@ -22,7 +22,7 @@ export interface Order {
   symbol: string;
   quantity: number;
   type: string;
-  limitPrice: number | undefined;
+  limitPrice: number | null;
   status: string;
   accountId: string;
   createdAt: string;
