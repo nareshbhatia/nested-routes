@@ -1,4 +1,4 @@
-# Nested Routes Remix
+# Nested Routes React Router
 
 ## Development Build
 
@@ -25,5 +25,5 @@ yarn build
 Then run the app in production mode:
 
 ```sh
-yarn start
+yarn serve
 ```
