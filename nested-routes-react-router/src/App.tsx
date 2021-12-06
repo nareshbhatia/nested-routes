@@ -1,7 +1,11 @@
-export const App = () => {
+import { Routes, Route } from 'react-router-dom';
+import { HomePage, NotFoundPage } from './pages';
+
+export function App() {
   return (
-    <div className="text-4xl font-bold text-center text-blue-500">
-      Hello World
-    </div>
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="*" element={<NotFoundPage />} />
+    </Routes>
   );
-};
+}
