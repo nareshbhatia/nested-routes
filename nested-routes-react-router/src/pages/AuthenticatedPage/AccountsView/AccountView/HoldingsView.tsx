@@ -1,4 +1,4 @@
-import { VerticalContainer } from '../../../components';
+import { VerticalContainer } from '../../../../components';
 
 export const HoldingsView = () => {
   return (

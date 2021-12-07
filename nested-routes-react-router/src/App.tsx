@@ -8,6 +8,7 @@ import {
   NoAccountSelected,
   NotFoundPage,
   OrdersView,
+  SettingsView,
 } from './pages';
 
 export function App() {
@@ -22,6 +23,7 @@ export function App() {
             <Route path="orders" element={<OrdersView />} />
           </Route>
         </Route>
+        <Route path="/settings" element={<SettingsView />} />
       </Route>
       <Route path="*" element={<NotFoundPage />} />
     </Routes>

@@ -1,5 +1,5 @@
 import { Outlet } from 'react-router-dom';
-import { AccountsSideBar, HorizontalContainer } from '../../components';
+import { AccountsSideBar, HorizontalContainer } from '../../../components';
 
 export function AccountsView() {
   return (
