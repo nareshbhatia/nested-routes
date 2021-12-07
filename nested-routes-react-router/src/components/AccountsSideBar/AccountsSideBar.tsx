@@ -1,6 +1,7 @@
+import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useQuery } from 'react-query';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { Account } from '../../models';
 import { ScrollingContainer } from '../Containers';
 import { API_URL } from '../../utils';
@@ -11,11 +12,23 @@ async function fetchAccounts(): Promise<Array<Account>> {
 }
 
 export const AccountsSideBar = () => {
+  const linkStyle = 'hover:text-primary-200 text-sm leading-5 cursor-pointer';
+
   const {
     isLoading,
     error,
     data: accounts,
   } = useQuery('accounts', fetchAccounts);
+
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  // when accounts are loaded, select the first account
+  useEffect(() => {
+    if (location.pathname === '/accounts' && accounts && accounts.length > 0) {
+      navigate(`${accounts[0].id}/holdings`);
+    }
+  }, [location, accounts]);
 
   if (error) {
     throw error;
@@ -34,11 +47,17 @@ export const AccountsSideBar = () => {
         {!isLoading && accounts && accounts.length > 0 && (
           <ul className="list-none pl-0 my-4">
             {accounts.map((account) => (
-              <li
-                key={account.id}
-                className="text-sm leading-5 text-gray-400 mb-4 cursor-pointer"
-              >
-                <NavLink to={`${account.id}/holdings`}>{account.name}</NavLink>
+              <li key={account.id} className="mb-4">
+                <NavLink
+                  to={`${account.id}/holdings`}
+                  className={({ isActive }) =>
+                    isActive
+                      ? `${linkStyle} text-primary-200`
+                      : `${linkStyle} text-gray-400`
+                  }
+                >
+                  {account.name}
+                </NavLink>
               </li>
             ))}
           </ul>
