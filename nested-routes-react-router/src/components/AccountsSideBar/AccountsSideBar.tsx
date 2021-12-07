@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import axios from 'axios';
 import { useQuery } from 'react-query';
 import { NavLink, useLocation, useNavigate } from 'react-router-dom';
@@ -42,7 +42,7 @@ export const AccountsSideBar = () => {
             ? 'Loading...'
             : accounts && accounts.length > 0
             ? 'Accounts'
-            : 'No Accounts Found'}
+            : 'No Accounts'}
         </h1>
         {!isLoading && accounts && accounts.length > 0 && (
           <ul className="list-none pl-0 my-4">
