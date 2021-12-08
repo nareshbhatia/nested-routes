@@ -6,8 +6,8 @@
   "license": "MIT",
   "scripts": {
     "build": "yarn build:css && remix build",
-    "build:css": "yarn postcss:run -- --env production",
-    "dev": "concurrently \"yarn postcss:run\" \"remix dev\"",
+    "build:css": "yarn postcss:run --env production",
+    "dev": "concurrently \"yarn postcss:run --watch\" \"remix dev\"",
     "format": "prettier --write README.md 'app/**/{*.md,*.json,*.css,*.ts*}'",
     "postcss:run": "postcss styles/**/*.css --base styles --dir app/styles",
     "postinstall": "remix setup node",
