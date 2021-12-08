@@ -23,7 +23,7 @@ export const AccountsSideBar = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
-  // when accounts are loaded, select the first account
+  // when accounts are loaded, navigate to the first account
   useEffect(() => {
     if (location.pathname === '/accounts' && accounts && accounts.length > 0) {
       navigate(`${accounts[0].id}/holdings`);

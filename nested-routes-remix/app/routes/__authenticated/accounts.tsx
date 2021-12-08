@@ -1,4 +1,5 @@
-import { json, Outlet, useLoaderData } from 'remix';
+import { useEffect } from 'react';
+import { json, Outlet, useLoaderData, useLocation, useNavigate } from 'remix';
 import type { LoaderFunction } from 'remix';
 import { AccountsSideBar, HorizontalContainer } from '~/components';
 import { Account } from '~/models';
@@ -21,6 +22,15 @@ export let loader: LoaderFunction = async () => {
 
 export default function AccountsView() {
   const { accounts } = useLoaderData<AccountsPageData>();
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  // if location is not pointing to any account, navigate to the first account
+  useEffect(() => {
+    if (location.pathname === '/accounts' && accounts && accounts.length > 0) {
+      navigate(`${accounts[0].id}/holdings`);
+    }
+  }, [location, accounts]);
 
   return (
     <HorizontalContainer className="min-h-0">
