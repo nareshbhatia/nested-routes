@@ -27,3 +27,20 @@ export interface Order {
   createdAt: string;
   createdBy: string;
 }
+
+export const OrderStatusLookup: { [key: string]: string } = {
+  NEW: 'New',
+  PLACED: 'Placed',
+  EXECUTED: 'Executed',
+  CANCELED: 'Canceled',
+};
+
+export const OrderTypeLookup: { [key in string]: string } = {
+  MARKET: 'Market',
+  LIMIT: 'Limit',
+};
+
+export const SideLookup: { [key in string]: string } = {
+  BUY: 'Buy',
+  SELL: 'Sell',
+};

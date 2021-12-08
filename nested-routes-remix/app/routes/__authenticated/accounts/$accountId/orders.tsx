@@ -1,8 +1,8 @@
-import { json, Outlet, useLoaderData, useNavigate } from 'remix';
+import { json, Outlet, useLoaderData, useNavigate, useParams } from 'remix';
 import type { LoaderFunction } from 'remix';
-import { HorizontalContainer } from '~/components';
+import { HorizontalContainer, VerticalContainer } from '~/components';
 import { Order } from '~/models';
-import { API_URL } from '~/utils';
+import { API_URL, formatDate } from '~/utils';
 
 type OrdersViewData = {
   orders: Array<Order>;
@@ -21,39 +21,54 @@ export const loader: LoaderFunction = async ({ params }) => {
 };
 
 export default function OrdersView() {
+  const { accountId, orderId } = useParams();
   const navigate = useNavigate();
   const data = useLoaderData();
   const orders = data.orders as Array<Order>;
 
   return (
-    <HorizontalContainer>
-      <table className="flex-1">
-        <thead>
-          <tr>
-            <th className="text-left">Date</th>
-            <th className="text-left">Side</th>
-            <th className="text-left">Symbol</th>
-            <th className="text-left">Status</th>
-          </tr>
-        </thead>
-        <tbody>
-          {orders.map((order) => (
-            <tr
-              key={order.id}
-              className="cursor-pointer"
-              onClick={() => {
-                navigate(order.id);
-              }}
-            >
-              <td>{order.createdAt}</td>
-              <td>{order.side}</td>
-              <td>{order.security.id}</td>
-              <td>{order.status}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-      <Outlet />
-    </HorizontalContainer>
+    <VerticalContainer className="paper border-paper p-4">
+      <h2>
+        {orders && orders.length > 0
+          ? 'Orders'
+          : 'There are no orders in this account'}
+      </h2>
+      {orders && orders.length > 0 && (
+        <HorizontalContainer className="mt-4">
+          <VerticalContainer>
+            <table>
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Side</th>
+                  <th>Symbol</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                {orders.map((order) => (
+                  <tr
+                    key={order.id}
+                    className="cursor-pointer hover:bg-gray-300"
+                    style={
+                      order.id === orderId ? { backgroundColor: '#b6e0fe' } : {}
+                    }
+                    onClick={() => {
+                      navigate(order.id);
+                    }}
+                  >
+                    <td>{formatDate(order.createdAt)}</td>
+                    <td>{order.side}</td>
+                    <td>{order.security.id}</td>
+                    <td>{order.status}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </VerticalContainer>
+          <Outlet />
+        </HorizontalContainer>
+      )}
+    </VerticalContainer>
   );
 }
