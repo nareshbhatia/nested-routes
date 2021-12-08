@@ -1,15 +1,13 @@
-const colors = require('tailwindcss/colors');
-
 module.exports = {
   mode: 'jit',
-  purge: ['./app/**/*.{ts,tsx}'],
-  darkMode: 'media',
+  purge: ['./index.html', './app/**/*.{ts,tsx}'],
+  darkMode: false, // or 'media' or 'class'
   theme: {
     colors: {
       transparent: 'transparent',
       current: 'currentColor',
-      black: colors.black,
-      white: colors.white,
+      black: '#000000',
+      white: '#ffffff',
       gray: {
         50: '#fafafa',
         100: '#f5f5f5',
@@ -34,6 +32,9 @@ module.exports = {
         700: '#0f609b',
         800: '#0a558c',
         900: '#003e6b',
+        light: '#2680c2', // primary-500
+        main: '#0a558c', // primary-800
+        dark: '#003e6b', // primary-900
       },
       secondary: {
         50: '#fffbea',
@@ -46,6 +47,9 @@ module.exports = {
         700: '#cb6e17',
         800: '#b44d12',
         900: '#8d2b0b',
+        light: '#fce588', // secondary-200
+        main: '#f7c948', // secondary-400
+        dark: '#b44d12', // secondary-800
       },
       neutral: {
         50: '#f0f4f8',
@@ -58,13 +62,20 @@ module.exports = {
         700: '#334e68',
         800: '#243b53',
         900: '#102a43',
+        light: '#f0f4f8', // neutral-50
+        main: '#486581', // neutral-600
+        dark: '#102a43', // neutral-900
       },
     },
     fontFamily: {
-      sans: ['Inter'],
+      sans: ['Inter', 'sans-serif'],
+      // serif: [],
+      // mono: [],
     },
     extend: {},
   },
-  variants: {},
+  variants: {
+    extend: {},
+  },
   plugins: [],
 };

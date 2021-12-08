@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-medium;
+  }
+
+  h1 {
+    @apply text-3xl;
+  }
+  h2 {
+    @apply text-2xl;
+  }
+  h3 {
+    @apply text-xl;
+  }
+  h4 {
+    @apply text-lg;
+  }
+  h5 {
+    @apply text-base;
+  }
+  h6 {
+    @apply text-sm;
+  }
+
+  table {
+    @apply w-full table-auto border-none border-collapse text-left;
+  }
+
+  table tr:nth-of-type(2n) {
+    @apply bg-gray-100;
+  }
+
+  td,
+  th {
+    @apply px-1 py-3 align-middle;
+  }
+
+  thead {
+    @apply border-t-2 border-b-2 border-solid border-gray-300;
+  }
+
+  tfoot {
+    @apply text-xl font-medium border-t-2 border-solid border-gray-300;
+  }
+
+  .link {
+    @apply text-primary-main no-underline;
+  }
+
+  .btn-link {
+    @apply inline-block
+      px-5 py-3
+      rounded-lg
+      shadow-lg 
+      bg-primary-main 
+      hover:bg-primary-600 hover:-translate-y-0.5 
+      active:bg-primary-dark
+      text-white
+      transform transition
+      focus:outline-none focus:ring focus:ring-offset-2 focus:ring-primary-main focus:ring-opacity-50
+      uppercase tracking-wider font-semibold text-sm;
+  }
+}
+
+@layer utilities {
+  /* text colors on normal background */
+  .text-default {
+    @apply text-neutral-900;
+  }
+  .text-muted {
+    @apply text-neutral-600;
+  }
+
+  /* text colors on primary background */
+  .text-primary-default {
+    @apply text-white;
+  }
+  .text-primary-muted {
+    @apply text-neutral-200;
+  }
+
+  /* text colors on secondary background */
+  .text-secondary-default {
+    @apply text-neutral-900;
+  }
+
+  .min-h-14 {
+    min-height: theme('spacing.14'); /* 3.5rem, 56px */
+  }
+
+  .flex-200px {
+    flex: 0 0 200px;
+  }
+
+  .bg-gradient {
+    background-image: radial-gradient(
+      circle,
+      theme('colors.white') 0%,
+      theme('colors.primary.50') 50%,
+      theme('colors.primary.100') 100%
+    );
+  }
+}

@@ -11,13 +11,13 @@ export const Navbar = () => {
       </span>
 
       <MdSettings
-        className="text-neutral-200"
+        className="h-5 w-5 text-neutral-200 hover:text-neutral-100"
         onClick={() => {
           navigate('/settings');
         }}
       />
       <MdLogout
-        className="text-neutral-200 ml-3"
+        className="h-5 w-5 text-neutral-200 hover:text-neutral-100 ml-3"
         onClick={() => {
           navigate('/');
         }}

@@ -1,6 +1,9 @@
 {
   "name": "nested-routes-react-router",
-  "version": "0.0.0",
+  "description": "Evaluation of nested routes",
+  "version": "0.1.0",
+  "author": "Naresh Bhatia",
+  "license": "MIT",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",

@@ -9,8 +9,7 @@ import {
 } from 'remix';
 import type { LinksFunction } from 'remix';
 
-import tailwindStyles from './tailwind.css';
-import globalStyles from '~/styles/global.css';
+import tailwindStyles from './styles/tailwind.css';
 
 export let links: LinksFunction = () => {
   return [
@@ -25,7 +24,6 @@ export let links: LinksFunction = () => {
       href: 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap',
     },
     { rel: 'stylesheet', href: tailwindStyles },
-    { rel: 'stylesheet', href: globalStyles },
   ];
 };
 
