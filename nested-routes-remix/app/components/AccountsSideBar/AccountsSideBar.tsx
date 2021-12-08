@@ -7,22 +7,32 @@ export interface AccountsSideBarProps {
 }
 
 export const AccountsSideBar = ({ accounts }: AccountsSideBarProps) => {
+  const linkStyle = 'hover:text-primary-200 text-sm leading-5 cursor-pointer';
+
   return (
     <div className="flex-200px flex flex-col bg-gray-850">
       <ScrollingContainer className="flex-1 p-4">
         <h1 className="font-semibold text-lg leading-6 text-white m-0 mt-2">
-          Accounts
+          {accounts && accounts.length > 0 ? 'Accounts' : 'No Accounts'}
         </h1>
-        <ul className="list-none pl-0 my-4">
-          {accounts.map((account) => (
-            <li
-              key={account.id}
-              className="text-sm leading-5 text-gray-400 mb-4 cursor-pointer"
-            >
-              <NavLink to={`${account.id}/holdings`}>{account.name}</NavLink>
-            </li>
-          ))}
-        </ul>
+        {accounts && accounts.length > 0 && (
+          <ul className="list-none pl-0 my-4">
+            {accounts.map((account) => (
+              <li key={account.id} className="mb-4">
+                <NavLink
+                  to={`${account.id}/holdings`}
+                  className={({ isActive }) =>
+                    isActive
+                      ? `${linkStyle} text-primary-200`
+                      : `${linkStyle} text-gray-400`
+                  }
+                >
+                  {account.name}
+                </NavLink>
+              </li>
+            ))}
+          </ul>
+        )}
       </ScrollingContainer>
     </div>
   );
