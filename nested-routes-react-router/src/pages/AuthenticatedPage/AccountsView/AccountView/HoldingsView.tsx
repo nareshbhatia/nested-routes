@@ -28,17 +28,17 @@ export const HoldingsView = () => {
   }
 
   return (
-    <VerticalContainer className="p-2">
-      <VerticalContainer className="paper border-paper p-2">
-        <h2>
-          {isLoading
-            ? 'Loading...'
-            : holdings && holdings.length > 0
-            ? 'Holdings'
-            : 'There are no holdings in this account'}
-        </h2>
-        {!isLoading && holdings && holdings.length > 0 && (
-          <table className="mt-2">
+    <VerticalContainer className="paper border-paper p-4">
+      <h2>
+        {isLoading
+          ? 'Loading...'
+          : holdings && holdings.length > 0
+          ? 'Holdings'
+          : 'There are no holdings in this account'}
+      </h2>
+      {!isLoading && holdings && holdings.length > 0 && (
+        <VerticalContainer>
+          <table className="mt-4">
             <thead>
               <tr>
                 <th>Symbol</th>
@@ -60,8 +60,8 @@ export const HoldingsView = () => {
               ))}
             </tbody>
           </table>
-        )}
-      </VerticalContainer>
+        </VerticalContainer>
+      )}
     </VerticalContainer>
   );
 };

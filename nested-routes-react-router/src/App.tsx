@@ -6,8 +6,10 @@ import {
   HoldingsView,
   HomePage,
   NoAccountSelected,
+  NoOrderSelected,
   NotFoundPage,
   OrdersView,
+  OrderView,
   SettingsView,
 } from './pages';
 
@@ -20,7 +22,10 @@ export function App() {
           <Route index element={<NoAccountSelected />} />
           <Route path=":accountId" element={<AccountView />}>
             <Route path="holdings" element={<HoldingsView />} />
-            <Route path="orders" element={<OrdersView />} />
+            <Route path="orders" element={<OrdersView />}>
+              <Route index element={<NoOrderSelected />} />
+              <Route path=":orderId" element={<OrderView />} />
+            </Route>
           </Route>
         </Route>
         <Route path="/settings" element={<SettingsView />} />

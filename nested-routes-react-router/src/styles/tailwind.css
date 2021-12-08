@@ -45,7 +45,7 @@
   }
 
   thead {
-    @apply border-b-2 border-solid border-gray-300;
+    @apply border-t-2 border-b-2 border-solid border-gray-300;
   }
 
   tfoot {
