@@ -1,4 +1,4 @@
 package.json
 package-lock.json
 *.snap
-/app/tailwind.css
+/app/styles/tailwind.css
