@@ -1,26 +1,26 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import {
   AccountsSideBar,
-  Header,
+  AuthenticatedLayout,
   HorizontalContainer,
-  ViewVerticalContainer,
 } from '../../components';
 import { Account } from '../../models';
 import { API_URL } from '../../utils';
 
-interface AccountsPageProps {
+export default function AccountsPage({
+  accounts,
+}: {
   accounts: Array<Account>;
+}) {
+  return (
+    <HorizontalContainer className="min-h-0">
+      <AccountsSideBar accounts={accounts} />
+    </HorizontalContainer>
+  );
 }
 
-const AccountsPage = ({ accounts }: AccountsPageProps) => {
-  return (
-    <ViewVerticalContainer>
-      <Header />
-      <HorizontalContainer className="min-h-0">
-        <AccountsSideBar accounts={accounts} />
-      </HorizontalContainer>
-    </ViewVerticalContainer>
-  );
+AccountsPage.getLayout = function getLayout(page: ReactElement) {
+  return <AuthenticatedLayout>{page}</AuthenticatedLayout>;
 };
 
 export async function getServerSideProps() {
@@ -41,5 +41,3 @@ export async function getServerSideProps() {
     },
   };
 }
-
-export default AccountsPage;
