@@ -19,7 +19,7 @@ export const AccountsSideBar = ({ accounts }: AccountsSideBarProps) => {
           <ul className="list-none pl-0 my-4">
             {accounts.map((account) => (
               <li key={account.id} className="mb-4">
-                <Link href={`${account.id}/holdings`}>
+                <Link href={`/accounts/${account.id}`}>
                   <a className={`${linkStyle} text-gray-400`}>{account.name}</a>
                 </Link>
               </li>
