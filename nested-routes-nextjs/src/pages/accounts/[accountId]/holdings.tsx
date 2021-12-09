@@ -7,16 +7,16 @@ import {
   HorizontalContainer,
   VerticalContainer,
   ViewVerticalContainer,
-} from '../../components';
-import { Account, Holding } from '../../models';
-import { API_URL } from '../../utils';
+} from '../../../components';
+import { Account, Holding } from '../../../models';
+import { API_URL } from '../../../utils';
 
-interface AccountPageProps {
+interface HoldingsPageProps {
   accounts: Array<Account>;
   holdings: Array<Holding>;
 }
 
-const AccountPage = ({ accounts, holdings }: AccountPageProps) => {
+const HoldingsPage = ({ accounts, holdings }: HoldingsPageProps) => {
   return (
     <ViewVerticalContainer>
       <Header />
@@ -88,4 +88,4 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   };
 };
 
-export default AccountPage;
+export default HoldingsPage;

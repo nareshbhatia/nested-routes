@@ -1,6 +1,8 @@
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 export const AccountHeader = () => {
+  const router = useRouter();
   const linkStyle = 'hover:text-neutral-900 text-sm font-semibold mr-5';
 
   const links = [
@@ -14,7 +16,7 @@ export const AccountHeader = () => {
         {links.map((link) => {
           return (
             <li key={link.href}>
-              <Link href={link.href}>
+              <Link href={`/accounts/${router.query.accountId}/${link.href}`}>
                 <a className={`${linkStyle} text-neutral-400`}>{link.label}</a>
               </Link>
             </li>
