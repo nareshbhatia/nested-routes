@@ -19,7 +19,7 @@ export const AccountHeader = () => {
               <Link href={`/accounts/${router.query.accountId}/${link.href}`}>
                 <a
                   className={
-                    // Can't check for full path match, because path may
+                    // Can't check for full path match because path may
                     // contain orderId at the end.
                     // Instead look for "holdings" or "orders" in the path.
                     router.asPath.includes(link.href)

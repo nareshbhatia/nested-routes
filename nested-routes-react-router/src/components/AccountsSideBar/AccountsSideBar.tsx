@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import axios from 'axios';
 import { useQuery } from 'react-query';
-import { NavLink, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate, useParams } from 'react-router-dom';
 import { Account } from '../../models';
 import { ScrollingContainer } from '../Containers';
 import { API_URL } from '../../utils';
@@ -12,6 +12,7 @@ async function fetchAccounts(): Promise<Array<Account>> {
 }
 
 export const AccountsSideBar = () => {
+  const { accountId } = useParams();
   const linkStyle = 'hover:text-primary-200 text-sm leading-5 cursor-pointer';
 
   const {
@@ -48,16 +49,19 @@ export const AccountsSideBar = () => {
           <ul className="list-none pl-0 my-4">
             {accounts.map((account) => (
               <li key={account.id} className="mb-4">
-                <NavLink
+                <Link
                   to={`${account.id}/holdings`}
-                  className={({ isActive }) =>
-                    isActive
+                  className={
+                    // NavLink will not work here because path may contain
+                    // "orders" at the end instead of "holdings".
+                    // Instead look for accountId match.
+                    accountId === account.id
                       ? `${linkStyle} text-primary-200`
                       : `${linkStyle} text-gray-400`
                   }
                 >
                   {account.name}
-                </NavLink>
+                </Link>
               </li>
             ))}
           </ul>
