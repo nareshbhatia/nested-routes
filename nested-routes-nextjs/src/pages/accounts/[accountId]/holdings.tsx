@@ -1,16 +1,17 @@
-import React from 'react';
+import { ReactElement } from 'react';
 import { GetServerSideProps } from 'next';
 import {
   AccountHeader,
   AccountsSideBar,
-  Header,
+  AuthenticatedLayout,
   HoldingList,
   HorizontalContainer,
   VerticalContainer,
-  ViewVerticalContainer,
 } from '../../../components';
 import { Account, Holding } from '../../../models';
 import { API_URL } from '../../../utils';
+
+const NO_HOLDINGS = 'There are no holdings in this account';
 
 export default function HoldingsPage({
   accounts,
@@ -20,18 +21,22 @@ export default function HoldingsPage({
   holdings: Array<Holding>;
 }) {
   return (
-    <ViewVerticalContainer>
-      <Header />
-      <HorizontalContainer className="min-h-0">
-        <AccountsSideBar accounts={accounts} />
-        <VerticalContainer>
-          <AccountHeader />
+    <HorizontalContainer className="min-h-0">
+      <AccountsSideBar accounts={accounts} />
+      <VerticalContainer>
+        <AccountHeader />
+        <VerticalContainer className="paper border-paper p-4">
+          <h2>{holdings.length > 0 ? 'Holdings' : NO_HOLDINGS}</h2>
           <HoldingList holdings={holdings} />
         </VerticalContainer>
-      </HorizontalContainer>
-    </ViewVerticalContainer>
+      </VerticalContainer>
+    </HorizontalContainer>
   );
 }
+
+HoldingsPage.getLayout = function getLayout(page: ReactElement) {
+  return <AuthenticatedLayout>{page}</AuthenticatedLayout>;
+};
 
 export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   // From https://nextjs.org/docs/basic-features/data-fetching:

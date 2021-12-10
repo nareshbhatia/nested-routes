@@ -6,6 +6,7 @@ import {
   AccountsSideBar,
   AuthenticatedLayout,
   HorizontalContainer,
+  OrderCard,
   OrderList,
   VerticalContainer,
 } from '../../../../components';
@@ -14,12 +15,14 @@ import { API_URL } from '../../../../utils';
 
 const NO_ORDERS = 'There are no orders in this account';
 
-export default function OrdersPage({
+export default function OrderPage({
   accounts,
   orders,
+  selectedOrder,
 }: {
   accounts: Array<Account>;
   orders: Array<Order>;
+  selectedOrder: Order;
 }) {
   const router = useRouter();
   const { accountId, orderId } = router.query;
@@ -37,11 +40,7 @@ export default function OrdersPage({
               selectedOrderId={orderId as string | undefined}
               orders={orders}
             />
-            {orders.length > 0 && (
-              <div className="w-80 ml-4 py-2">
-                <p className="text-xl">Select an order to view details</p>
-              </div>
-            )}
+            <OrderCard order={selectedOrder} />
           </HorizontalContainer>
         </VerticalContainer>
       </VerticalContainer>
@@ -49,7 +48,7 @@ export default function OrdersPage({
   );
 }
 
-OrdersPage.getLayout = function getLayout(page: ReactElement) {
+OrderPage.getLayout = function getLayout(page: ReactElement) {
   return <AuthenticatedLayout>{page}</AuthenticatedLayout>;
 };
 
@@ -70,10 +69,14 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   );
   const orders = await resOrders.json();
 
+  const resOrder = await fetch(`${API_URL}/orders/${params?.orderId}`);
+  const order = await resOrder.json();
+
   return {
     props: {
       accounts,
       orders,
+      selectedOrder: order,
     },
   };
 };

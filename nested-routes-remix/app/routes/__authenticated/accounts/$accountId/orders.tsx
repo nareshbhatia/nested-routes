@@ -21,7 +21,7 @@ export const loader: LoaderFunction = async ({ params }) => {
 };
 
 export default function OrdersView() {
-  const { accountId, orderId } = useParams();
+  const { orderId } = useParams();
   const navigate = useNavigate();
   const data = useLoaderData();
   const orders = data.orders as Array<Order>;
