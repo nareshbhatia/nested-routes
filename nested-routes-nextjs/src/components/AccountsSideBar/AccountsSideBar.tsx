@@ -24,6 +24,9 @@ export const AccountsSideBar = ({ accounts }: AccountsSideBarProps) => {
                 <Link href={`/accounts/${account.id}/holdings`}>
                   <a
                     className={
+                      // Can't check for full path match, because path may
+                      // contain "orders" at the end instead of "holdings".
+                      // Instead look for accountId match.
                       router.query.accountId === account.id
                         ? `${linkStyle} text-primary-200`
                         : `${linkStyle} text-gray-400`
