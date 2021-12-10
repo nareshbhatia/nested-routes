@@ -1,7 +1,8 @@
-import { NavLink } from 'remix';
+import { Link, useLocation } from 'remix';
 
 export const AccountHeader = () => {
   const linkStyle = 'hover:text-neutral-900 text-sm font-semibold mr-5';
+  const location = useLocation();
 
   const links = [
     { to: 'holdings', label: 'Holdings' },
@@ -14,17 +15,19 @@ export const AccountHeader = () => {
         {links.map((link) => {
           return (
             <li key={link.to}>
-              <NavLink
+              <Link
                 to={link.to}
-                className={({ isActive }) =>
-                  isActive
+                className={
+                  // NavLink will not work here because path may contain
+                  // orderId at the end.
+                  // Instead look for "holdings" or "orders" in the path.
+                  location.pathname.includes(link.to)
                     ? `${linkStyle} text-neutral-900`
                     : `${linkStyle} text-neutral-400`
                 }
-                end
               >
                 {link.label}
-              </NavLink>
+              </Link>
             </li>
           );
         })}

@@ -12,7 +12,6 @@ async function fetchAccounts(): Promise<Array<Account>> {
 }
 
 export const AccountsSideBar = () => {
-  const { accountId } = useParams();
   const linkStyle = 'hover:text-primary-200 text-sm leading-5 cursor-pointer';
 
   const {
@@ -21,6 +20,7 @@ export const AccountsSideBar = () => {
     data: accounts,
   } = useQuery('accounts', fetchAccounts);
 
+  const { accountId } = useParams();
   const location = useLocation();
   const navigate = useNavigate();
 

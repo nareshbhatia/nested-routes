@@ -1,4 +1,4 @@
-import { NavLink } from 'remix';
+import { Link, useParams } from 'remix';
 import { Account } from '../../models';
 import { ScrollingContainer } from '../Containers';
 
@@ -8,6 +8,7 @@ export interface AccountsSideBarProps {
 
 export const AccountsSideBar = ({ accounts }: AccountsSideBarProps) => {
   const linkStyle = 'hover:text-primary-200 text-sm leading-5 cursor-pointer';
+  const { accountId } = useParams();
 
   return (
     <div className="flex-200px flex flex-col bg-gray-850">
@@ -19,16 +20,19 @@ export const AccountsSideBar = ({ accounts }: AccountsSideBarProps) => {
           <ul className="list-none pl-0 my-4">
             {accounts.map((account) => (
               <li key={account.id} className="mb-4">
-                <NavLink
+                <Link
                   to={`${account.id}/holdings`}
-                  className={({ isActive }) =>
-                    isActive
+                  className={
+                    // NavLink will not work here because path may contain
+                    // "orders" at the end instead of "holdings".
+                    // Instead look for accountId match.
+                    accountId === account.id
                       ? `${linkStyle} text-primary-200`
                       : `${linkStyle} text-gray-400`
                   }
                 >
                   {account.name}
-                </NavLink>
+                </Link>
               </li>
             ))}
           </ul>
