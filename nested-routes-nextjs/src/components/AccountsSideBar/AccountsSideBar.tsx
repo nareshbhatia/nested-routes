@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { Account } from '../../models';
 import { ScrollingContainer } from '../Containers';
 
@@ -7,6 +8,7 @@ export interface AccountsSideBarProps {
 }
 
 export const AccountsSideBar = ({ accounts }: AccountsSideBarProps) => {
+  const router = useRouter();
   const linkStyle = 'hover:text-primary-200 text-sm leading-5 cursor-pointer';
 
   return (
@@ -20,7 +22,15 @@ export const AccountsSideBar = ({ accounts }: AccountsSideBarProps) => {
             {accounts.map((account) => (
               <li key={account.id} className="mb-4">
                 <Link href={`/accounts/${account.id}/holdings`}>
-                  <a className={`${linkStyle} text-gray-400`}>{account.name}</a>
+                  <a
+                    className={
+                      router.query.accountId === account.id
+                        ? `${linkStyle} text-primary-200`
+                        : `${linkStyle} text-gray-400`
+                    }
+                  >
+                    {account.name}
+                  </a>
                 </Link>
               </li>
             ))}
