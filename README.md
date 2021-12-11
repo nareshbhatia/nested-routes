@@ -106,7 +106,7 @@ sub-section of the page.
 
 ### Remix
 
-![Waterfall - Remix](assets/waterfall-remix.png)
+![Waterfall - Remix](assets/waterfall-remix-1.png)
 
 ## Lighthouse Performance (Mobile Device)
 
@@ -120,5 +120,5 @@ sub-section of the page.
 
 ### Remix
 
-![Performance - Remix](assets/performance-remix.png)
+![Performance - Remix](assets/performance-remix-1.png)
 
