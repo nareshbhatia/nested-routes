@@ -12,16 +12,20 @@ routes.
 
 ## Home Page
 
-**Route**: `/` ![Home Page](assets/home.png)
+**Route**: `/`
+
+![Home Page](assets/home.png)
 
 ## Holdings Page
 
 **Route**: `/accounts/brokerage-account/holdings`
+
 ![Holdings Page](assets/holdings.png)
 
 ## Orders Page
 
 **Route**: `/accounts/brokerage-account/orders/order-001`
+
 ![Orders Page](assets/orders.png)
 
 ## Observations
@@ -85,3 +89,17 @@ own data on the server-side. See the routes under
 [/app/routes](./nested-routes-remix/app/routes) to see what I mean. This is so
 much nicer because you only see code relevant to what you are trying to do on a
 sub-section of the page.
+
+### Waterfalls
+
+### React Router
+
+![Waterfall - React Router](assets/waterfall-react-router.png)
+
+### Next.js
+
+![Waterfall - Next.js](assets/waterfall-nextjs.png)
+
+### Remix
+
+![Waterfall - Remix](assets/waterfall-remix.png)
