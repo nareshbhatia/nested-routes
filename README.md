@@ -112,13 +112,13 @@ sub-section of the page.
 
 ### React Router
 
-![Performance - React Router](assets/waterfall-react-router.png)
+![Performance - React Router](assets/performance-react-router.png)
 
 ### Next.js
 
-![Performance - Next.js](assets/waterfall-nextjs.png)
+![Performance - Next.js](assets/performance-nextjs.png)
 
 ### Remix
 
-![Performance - Remix](assets/waterfall-remix.png)
+![Performance - Remix](assets/performance-remix.png)
 
