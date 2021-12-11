@@ -56,8 +56,12 @@ back-to-back sequential nature of the process is evident from the waterfall and
 results in a delay in presenting the page to the user and making it interactive
 (a.k.a. First Contentful Paint and Time to Interactive).
 
-This is exactly what Server-Side Rendering (SSR) tries to avoid. Let's see how
-Next.js and Remix do it.
+This is exactly what Server-Side Rendering (SSR) tries to avoid. With SSR, the
+server is responsible for fetching all the data and using it to create the HTML
+markup. The markup is then sent to the client in one shot, making the page
+appear really fast. In parallel, the JavaScript for the page is also downloaded
+to the browser and appropriate handlers are attached to the DOM (a process known
+as "hydration"). Let's see how this works in Next.js and Remix.
 
 ### Next.js
 
