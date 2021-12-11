@@ -94,7 +94,7 @@ own data on the server-side. See the routes under
 much nicer because you only see code relevant to what you are trying to do on a
 sub-section of the page.
 
-### Waterfalls
+## Waterfalls at Slow 3G
 
 ### React Router
 
@@ -107,3 +107,18 @@ sub-section of the page.
 ### Remix
 
 ![Waterfall - Remix](assets/waterfall-remix.png)
+
+## Lighthouse Performance (Mobile Device)
+
+### React Router
+
+![Performance - React Router](assets/waterfall-react-router.png)
+
+### Next.js
+
+![Performance - Next.js](assets/waterfall-nextjs.png)
+
+### Remix
+
+![Performance - Remix](assets/waterfall-remix.png)
+
