@@ -1,5 +1,3 @@
-import { VerticalContainer } from '~/components';
-
 export default function NoOrderSelected() {
   return (
     <div className="w-80 ml-4 py-2">
