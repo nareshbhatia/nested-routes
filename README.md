@@ -108,6 +108,10 @@ sub-section of the page.
 
 ![Waterfall - Remix](assets/waterfall-remix-1.png)
 
+### Remix (after font optimization)
+
+![Waterfall - Remix - Font Optimized](assets/waterfall-remix-2.png)
+
 ## Lighthouse Performance (Mobile Device)
 
 ### React Router
@@ -122,3 +126,6 @@ sub-section of the page.
 
 ![Performance - Remix](assets/performance-remix-1.png)
 
+### Remix (after font optimization)
+
+![Performance - Remix - Font Optimized](assets/performance-remix-2.png)

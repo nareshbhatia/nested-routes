@@ -5,7 +5,7 @@ import { AccountsSideBar, HorizontalContainer } from '~/components';
 import { Account } from '~/models';
 import { API_URL } from '~/utils';
 
-type AccountsPageData = {
+type AccountsViewData = {
   accounts: Array<Account>;
 };
 
@@ -13,7 +13,7 @@ export let loader: LoaderFunction = async () => {
   const resAccounts = await fetch(`${API_URL}/accounts`);
   const accounts = await resAccounts.json();
 
-  let data: AccountsPageData = {
+  let data: AccountsViewData = {
     accounts,
   };
 
@@ -21,7 +21,7 @@ export let loader: LoaderFunction = async () => {
 };
 
 export default function AccountsView() {
-  const { accounts } = useLoaderData<AccountsPageData>();
+  const { accounts } = useLoaderData<AccountsViewData>();
   const location = useLocation();
   const navigate = useNavigate();
 
