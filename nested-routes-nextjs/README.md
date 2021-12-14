@@ -2,12 +2,6 @@
 
 ## Development Build
 
-This app makes API calls to an external server. First start this server by
-following the instructions at
-[Nested Routes Server](../nested-routes-server/README.md).
-
-Now run this project from another shell:
-
 ```sh
 yarn dev
 ```
@@ -27,3 +21,11 @@ Then run the app in production mode:
 ```sh
 yarn start
 ```
+
+## API Server
+
+This app makes API calls to an external server deployed at
+`https://nested-routes-server.herokuapp.com`. If for some reason you'd like to
+deploy the API server locally, follow the instructions at
+[Nested Routes Server](../nested-routes-server/README.md). and change the
+API_URL constant in `/utils/Constants.ts` to `http://localhost:8080`.
