@@ -98,34 +98,50 @@ sub-section of the page.
 
 ### React Router
 
+**Deployed at**: https://nested-routes-react-router.vercel.app/
+
 ![Waterfall - React Router](assets/waterfall-react-router.png)
 
 ### Next.js
 
+**Deployed at**: https://nested-routes-nextjs.vercel.app/
+
 ![Waterfall - Next.js](assets/waterfall-nextjs.png)
 
-### Remix
+### Remix on Vercel
 
-![Waterfall - Remix](assets/waterfall-remix-1.png)
+**Deployed at**: https://nested-routes-remix.vercel.app/
 
-### Remix (after font optimization)
+![Waterfall - Remix on Vercel](assets/waterfall-remix-on-vercel.png)
 
-![Waterfall - Remix - Font Optimized](assets/waterfall-remix-2.png)
+### Remix on fly.io
+
+**Deployed at**: https://nested-routes-remix.fly.dev/
+
+![Waterfall - Remix on fly.io](assets/)
 
 ## Lighthouse Performance (Mobile Device)
 
 ### React Router
 
+**Deployed at**: https://nested-routes-react-router.vercel.app/
+
 ![Performance - React Router](assets/performance-react-router.png)
 
 ### Next.js
 
+**Deployed at**: https://nested-routes-nextjs.vercel.app/
+
 ![Performance - Next.js](assets/performance-nextjs.png)
 
-### Remix
+### Remix on Vercel
 
-![Performance - Remix](assets/performance-remix-1.png)
+**Deployed at**: https://nested-routes-remix.vercel.app/
 
-### Remix (after font optimization)
+![Performance - Remix on Vercel](assets/performance-remix-on-vercel.png)
 
-![Performance - Remix - Font Optimized](assets/performance-remix-2.png)
+### Remix on fly.io
+
+**Deployed at**: https://nested-routes-remix.fly.dev/
+
+![Performance - Remix on fly.io](assets/)
