@@ -118,7 +118,7 @@ sub-section of the page.
 
 **Deployed at**: https://nested-routes-remix.fly.dev/
 
-![Waterfall - Remix on fly.io](assets/)
+![Waterfall - Remix on fly.io](assets/waterfall-remix-on-flyio.png)
 
 ## Lighthouse Performance (Mobile Device)
 
@@ -144,4 +144,4 @@ sub-section of the page.
 
 **Deployed at**: https://nested-routes-remix.fly.dev/
 
-![Performance - Remix on fly.io](assets/)
+![Performance - Remix on fly.io](assets/performance-remix-on-flyio.png)
