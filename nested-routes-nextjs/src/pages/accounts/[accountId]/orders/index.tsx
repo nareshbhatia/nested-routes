@@ -7,6 +7,7 @@ import {
   AuthenticatedLayout,
   HorizontalContainer,
   OrderList,
+  ScrollingContainer,
   VerticalContainer,
 } from '../../../../components';
 import { Account, Order } from '../../../../models';
@@ -29,14 +30,16 @@ export default function OrdersPage({
       <AccountsSideBar accounts={accounts} />
       <VerticalContainer>
         <AccountHeader />
-        <VerticalContainer className="paper border-paper p-4">
+        <VerticalContainer className="p-4 min-h-0">
           <h2>{orders.length > 0 ? 'Orders' : NO_ORDERS}</h2>
-          <HorizontalContainer className="mt-4">
-            <OrderList
-              accountId={accountId as string}
-              selectedOrderId={orderId as string | undefined}
-              orders={orders}
-            />
+          <HorizontalContainer className="mt-4 min-h-0">
+            <ScrollingContainer className="flex-1">
+              <OrderList
+                accountId={accountId as string}
+                selectedOrderId={orderId as string | undefined}
+                orders={orders}
+              />
+            </ScrollingContainer>
             {orders.length > 0 && (
               <div className="w-80 ml-4 py-2">
                 <p className="text-xl">Select an order to view details</p>

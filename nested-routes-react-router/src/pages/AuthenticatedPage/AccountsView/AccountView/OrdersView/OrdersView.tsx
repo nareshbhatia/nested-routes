@@ -33,7 +33,7 @@ export const OrdersView = () => {
   }
 
   return (
-    <VerticalContainer className="paper border-paper p-4">
+    <VerticalContainer className="p-4 min-h-0">
       <h2>
         {isLoading
           ? 'Loading...'
@@ -42,8 +42,8 @@ export const OrdersView = () => {
           : 'There are no orders in this account'}
       </h2>
       {!isLoading && orders && orders.length > 0 && (
-        <HorizontalContainer className="mt-4">
-          <VerticalContainer>
+        <HorizontalContainer className="mt-4 min-h-0">
+          <ScrollingContainer className="flex-1">
             <table>
               <thead>
                 <tr>
@@ -73,7 +73,7 @@ export const OrdersView = () => {
                 ))}
               </tbody>
             </table>
-          </VerticalContainer>
+          </ScrollingContainer>
           <Outlet />
         </HorizontalContainer>
       )}

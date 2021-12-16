@@ -1,4 +1,4 @@
-import { VerticalContainer } from '../Containers';
+import { ScrollingContainer, VerticalContainer } from '../Containers';
 import { Holding } from '../../models';
 
 export function HoldingList({ holdings }: { holdings: Array<Holding> }) {
@@ -7,8 +7,8 @@ export function HoldingList({ holdings }: { holdings: Array<Holding> }) {
   }
 
   return (
-    <VerticalContainer>
-      <table className="mt-4">
+    <ScrollingContainer className="mt-4">
+      <table>
         <thead>
           <tr>
             <th>Symbol</th>
@@ -30,6 +30,6 @@ export function HoldingList({ holdings }: { holdings: Array<Holding> }) {
           ))}
         </tbody>
       </table>
-    </VerticalContainer>
+    </ScrollingContainer>
   );
 }

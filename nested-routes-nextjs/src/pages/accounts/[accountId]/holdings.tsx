@@ -25,7 +25,7 @@ export default function HoldingsPage({
       <AccountsSideBar accounts={accounts} />
       <VerticalContainer>
         <AccountHeader />
-        <VerticalContainer className="paper border-paper p-4">
+        <VerticalContainer className="p-4 min-h-0">
           <h2>{holdings.length > 0 ? 'Holdings' : NO_HOLDINGS}</h2>
           <HoldingList holdings={holdings} />
         </VerticalContainer>

@@ -8,6 +8,7 @@ import {
   HorizontalContainer,
   OrderCard,
   OrderList,
+  ScrollingContainer,
   VerticalContainer,
 } from '../../../../components';
 import { Account, Order } from '../../../../models';
@@ -32,14 +33,16 @@ export default function OrderPage({
       <AccountsSideBar accounts={accounts} />
       <VerticalContainer>
         <AccountHeader />
-        <VerticalContainer className="paper border-paper p-4">
+        <VerticalContainer className="p-4 min-h-0">
           <h2>{orders.length > 0 ? 'Orders' : NO_ORDERS}</h2>
-          <HorizontalContainer className="mt-4">
-            <OrderList
-              accountId={accountId as string}
-              selectedOrderId={orderId as string | undefined}
-              orders={orders}
-            />
+          <HorizontalContainer className="mt-4 min-h-0">
+            <ScrollingContainer className="flex-1">
+              <OrderList
+                accountId={accountId as string}
+                selectedOrderId={orderId as string | undefined}
+                orders={orders}
+              />
+            </ScrollingContainer>
             <OrderCard order={selectedOrder} />
           </HorizontalContainer>
         </VerticalContainer>

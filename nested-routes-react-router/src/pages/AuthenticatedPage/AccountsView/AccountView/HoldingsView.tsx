@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { QueryFunctionContext, useQuery } from 'react-query';
 import { useParams } from 'react-router-dom';
-import { VerticalContainer } from '../../../../components';
+import { ScrollingContainer, VerticalContainer } from '../../../../components';
 import { Holding } from '../../../../models';
 import { API_URL } from '../../../../utils';
 
@@ -28,7 +28,7 @@ export const HoldingsView = () => {
   }
 
   return (
-    <VerticalContainer className="paper border-paper p-4">
+    <VerticalContainer className="p-4 min-h-0">
       <h2>
         {isLoading
           ? 'Loading...'
@@ -37,8 +37,8 @@ export const HoldingsView = () => {
           : 'There are no holdings in this account'}
       </h2>
       {!isLoading && holdings && holdings.length > 0 && (
-        <VerticalContainer>
-          <table className="mt-4">
+        <ScrollingContainer className="mt-4">
+          <table>
             <thead>
               <tr>
                 <th>Symbol</th>
@@ -60,7 +60,7 @@ export const HoldingsView = () => {
               ))}
             </tbody>
           </table>
-        </VerticalContainer>
+        </ScrollingContainer>
       )}
     </VerticalContainer>
   );

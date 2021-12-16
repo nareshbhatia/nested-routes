@@ -1,6 +1,10 @@
 import { json, Outlet, useLoaderData, useNavigate, useParams } from 'remix';
 import type { LoaderFunction } from 'remix';
-import { HorizontalContainer, VerticalContainer } from '~/components';
+import {
+  HorizontalContainer,
+  ScrollingContainer,
+  VerticalContainer,
+} from '~/components';
 import { Order } from '~/models';
 import { API_URL, formatDate } from '~/utils';
 
@@ -27,15 +31,15 @@ export default function OrdersView() {
   const orders = data.orders as Array<Order>;
 
   return (
-    <VerticalContainer className="paper border-paper p-4">
+    <VerticalContainer className="p-4 min-h-0">
       <h2>
         {orders && orders.length > 0
           ? 'Orders'
           : 'There are no orders in this account'}
       </h2>
       {orders && orders.length > 0 && (
-        <HorizontalContainer className="mt-4">
-          <VerticalContainer>
+        <HorizontalContainer className="mt-4 min-h-0">
+          <ScrollingContainer className="flex-1">
             <table>
               <thead>
                 <tr>
@@ -65,7 +69,7 @@ export default function OrdersView() {
                 ))}
               </tbody>
             </table>
-          </VerticalContainer>
+          </ScrollingContainer>
           <Outlet />
         </HorizontalContainer>
       )}

@@ -10,7 +10,7 @@ export const AccountHeader = () => {
   ];
 
   return (
-    <nav className="flex items-center h-14 px-4 bg-neutral-50">
+    <nav className="flex items-center min-h-14 px-4 bg-neutral-50">
       <ul className="flex">
         {links.map((link) => {
           return (

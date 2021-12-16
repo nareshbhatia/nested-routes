@@ -1,6 +1,6 @@
 import { json, useLoaderData } from 'remix';
 import type { LoaderFunction } from 'remix';
-import { VerticalContainer } from '~/components';
+import { ScrollingContainer, VerticalContainer } from '~/components';
 import { Holding } from '~/models';
 import { API_URL } from '~/utils';
 
@@ -25,15 +25,15 @@ export default function HoldingsView() {
   const holdings = data.holdings as Array<Holding>;
 
   return (
-    <VerticalContainer className="paper border-paper p-4">
+    <VerticalContainer className="p-4 min-h-0">
       <h2>
         {holdings && holdings.length > 0
           ? 'Holdings'
           : 'There are no holdings in this account'}
       </h2>
       {holdings && holdings.length > 0 && (
-        <VerticalContainer>
-          <table className="mt-4">
+        <ScrollingContainer className="mt-4">
+          <table>
             <thead>
               <tr>
                 <th>Symbol</th>
@@ -55,7 +55,7 @@ export default function HoldingsView() {
               ))}
             </tbody>
           </table>
-        </VerticalContainer>
+        </ScrollingContainer>
       )}
     </VerticalContainer>
   );
