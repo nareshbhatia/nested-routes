@@ -2,11 +2,25 @@ export interface Account {
   id: string;
   name: string;
 }
+
+/** Net Worth for an account */
+export interface NetWorth {
+  id: string;
+  name: string;
+  investmentTotal: number;
+  cashBalance: number;
+}
+
 export interface Security {
   id: string;
   name: string;
   price: number;
   industryId: string;
+}
+
+export interface CashBalance {
+  id: string;
+  balance: number;
 }
 
 export interface Holding {

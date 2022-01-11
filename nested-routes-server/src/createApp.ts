@@ -9,7 +9,7 @@ export function createApp() {
   const app = express();
 
   // Add middleware to log requests
-  app.use(morgan('combined'))
+  app.use(morgan('combined'));
 
   // Add middleware to enable CORS
   app.use(cors());
